@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.dualgames.crazywheel"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file('/home/ianholing/eKameno/keys/dualgames.jks')
+            storePassword "Du4lg4m3s!!"
+            keyAlias "dualgames"
+            keyPassword "Du4lg4m3s!!"
+        }
+
+        debug {
+            storeFile file('/home/ianholing/eKameno/keys/dualgames.jks')
+            storePassword "Du4lg4m3s!!"
+            keyAlias "dualgames"
+            keyPassword "Du4lg4m3s!!"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.google.android.gms:play-services:8.1.0'
+    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    compile project(':BaseGameUtils')
+}
