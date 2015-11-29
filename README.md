@@ -20,3 +20,8 @@ modules="com/android/godot/GodotGoogleGamePlayServices"
 You can also try the complete game here:
 
 https://play.google.com/store/apps/details?id=com.dualgames.crazywheel
+
+
+You can also check the entire Godot project here:
+
+https://github.com/ianholing/Crazy-wheel-godot-google-play/tree/master/app/src/main/assets
